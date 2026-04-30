@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .border-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border: 5px solid #222;
+    border-radius: 20px;
+    padding: 30px;
+    background: #fff;
+  }
+
+  .circles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .circle {
+    width: 300px;
+    height: 150px;
+    border-radius: 60%;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+
+  .c1 { background: #900707; }
+  .c2 { background: #ffbd2e; color: black; }
+  .c3 { background: #19b831; }
+
+</style>
+</head>
+<body>
+
+<div class="border-box">
+  <div class="circles">
+    <button class="circle c1" onclick="update(this, 'Qızıl')"></button>
+    <button class="circle c2" onclick="update(this, 'Sarı')"></button>
+    <button class="circle c3" onclick="update(this, 'Jasıl')"></button>
+  </div>
+</div>
+
+<script>
+  function update(btn, name) {
+    const allButtons = document.querySelectorAll('.circle');
+    allButtons.forEach(b => b.innerText = '');
+    
+    btn.innerText = name;
+  }
+</script>
+
+</body>
+</html>
